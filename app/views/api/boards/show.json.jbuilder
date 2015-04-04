@@ -2,3 +2,9 @@
 # it should include the board
 #  - its lists
 #    - the cards for each list
+json.(@board, :title, :user_id, :created_at, :updated_at)
+
+json.lists @board.lists do |list|
+  json.(list, :title, :board_id, :ord, :created_at, :updated_at)
+  json.cards list.cards
+end
