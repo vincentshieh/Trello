@@ -15,3 +15,35 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+.lists-show {
+  float: left;
+  margin: 0 10px;
+}
+
+.lists-new {
+  float: left;
+  margin: 0 10px;
+}
+
+.board-delete {
+  float: left;
+  margin: 0 10px;
+}
+
+.index-link {
+  float: left;
+  margin: 0 10px;
+}
+
+.cards-new {
+  margin: 10px 0;
+}
+
+.card-delete {
+  display: none;
+}
+
+.card-item:hover .card-delete {
+  display: block;
+}

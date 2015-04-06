@@ -1,0 +1,19 @@
+<h4>New Card</h4>
+
+<form>
+  <input type="hidden"
+         name="card[list_id]"
+         value="<%= list.escape("id") %>">
+
+  <label>
+    Title
+    <input type="text" name="card[title]"></input>
+  </label><br>
+
+  <label>
+    Description
+    <textarea type="text" name="card[description]"></textarea>
+  </label><br>
+
+  <input type="submit">
+</form>
