@@ -27,9 +27,29 @@ TrelloClone.Views.ListsShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var renderedContent = this.template({ list: this.model });
+    var renderedContent = this.template({ list: this.model }),
+      cardSubviews = this.subviews('.cards'),
+      view = this;
     this.$el.html(renderedContent);
     this.attachSubviews();
+
+    setTimeout(function () {
+      view.$('.cards').sortable({
+        update: function () {
+          var newSubviews = [];
+
+          cardSubviews.forEach(function (subview) {
+            var newIdx = view.$('.cards > div').index(subview.$el);
+            newSubviews[newIdx] = subview;
+            subview.model.set({ ord: newIdx });
+            subview.model.save();
+          });
+
+          cardSubviews = newSubviews;
+        }
+      });
+    }, 0);
+
     return this;
   }
 });

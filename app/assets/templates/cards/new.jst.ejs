@@ -5,15 +5,13 @@
          name="card[list_id]"
          value="<%= list.escape("id") %>">
 
-  <label>
-    Title
-    <input type="text" name="card[title]"></input>
-  </label><br>
+  <label for="title-input" class="title-label">Title</label>
+    <input id="title-input" type="text" name="card[title]"></input>
+  <br>
 
-  <label>
-    Description
-    <textarea type="text" name="card[description]"></textarea>
-  </label><br>
+  <label for="description-text" class="description-label">Description</label>
+    <textarea id="description-text" type="text" name="card[description]"></textarea>
+  <br>
 
   <input type="submit">
 </form>

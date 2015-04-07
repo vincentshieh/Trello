@@ -9,21 +9,45 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require jquery.ui.all
+ *= require jquery-ui
  *= require_tree .
  */
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
-.lists-show {
+#main {
+  margin: 40px;
+}
+
+.lists {
+  width: 800px;
+  height: 800px;
+  padding: 20px;
   float: left;
-  margin: 0 10px;
+  background-color: #00CCFF;
+  .ui-sortable-handle {
+    margin: 20px;
+    display: inline-block;
+  }
+}
+
+.list-show {
+  padding: 10px;
+  background-color: cornflowerblue;
+}
+
+.dragged {
+  -webkit-transform: rotate(7deg);
+  box-shadow: 3px 3px 3px #3366CC;
 }
 
 .lists-new {
   float: left;
-  margin: 0 10px;
+  height: 800px;
+  padding: 30px;
+  background-color: #00CCFF;
 }
 
 .board-delete {
@@ -45,5 +69,21 @@
 }
 
 .card-item:hover .card-delete {
+  display: block;
+}
+
+.title-label {
+  display: block;
+}
+
+#title-input {
+  display: block;
+}
+
+.description-label {
+  display: block;
+}
+
+#description-input {
   display: block;
 }
